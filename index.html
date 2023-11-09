@@ -4,17 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>rock paper scissors</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="d.css">
 </head>
 <body>
-  <div class="container">
-    <button class="move" id="rock">rock</button>
-    <button class="move" id="paper">paper</button>
-    <button class="move" id="scissors">scissors</button>
+  <div class="page-container">
+    <div class="top-hp-bars">
+      bam
+      <div>
+        
+      </div>
+      <div>
+  
+      </div>
+    </div>
+  
+    <div class="middle-playerVS">
+      <div class="playerBox">
+        <img src="imagesGifs/haikyuu.gif">
+        <div class="renderPlayerMove">CHOOSE YOUR MOVE!</div>
+      </div>
+  
+      <div class="battleToScore">BATTLE!</div>
+  
+      <div class="opponentBox">
+        <div class="renderCPMove">ENEMY MOVE!</div>
+        <img src="imagesGifs/opponent.gif">
+      </div>
+    </div>
+  
+    <div class="move-container">
+      <button class="move" id="rock">rock</button>
+      <button class="move" id="paper">paper</button>
+      <button class="move" id="scissors">scissors</button>
+    </div>
+  
+  
+    <div class="scoreSetter">
+      <p class="scoreBoard">BATTLE</p>
+      <p class="results"></p>
+    </div>
   </div>
-  <div class="scoreSetter">
-    <p class="scoreBoard"></p>
-    <p class="results"></p>
-  </div>
+
 
   <script src="rps.js"></script>
 
