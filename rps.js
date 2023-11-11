@@ -1,3 +1,24 @@
+// variables
+let middleplayerVS = document.querySelector('.middle-playerVS');
+let renderPlayerMove = document.querySelector('.renderPlayerMove');
+let renderCPMove = document.querySelector('.renderCPMove');
+
+let pHPnodeList = document.querySelector(".playerHP").children;
+let cHPnodeList = document.querySelector(".opponentHP").children;
+
+let playerHpBoxes = Array.from(pHPnodeList);
+let opponentHpBoxes = Array.from(cHPnodeList);
+let playerHP = playerHpBoxes.length,opponentHP = -1;
+
+let moves = document.querySelectorAll('.move');
+let renderResult = document.querySelector('.results');
+let scoreBoard = document.querySelector('.scoreBoard');
+let playerScore = {
+  wins: 0,
+  losses: 0,
+  ties: 0
+}
+
 // core functions
 function getComputerChoice() {
   const getNumber = Math.floor((Math.random() * 100) + 1);
@@ -17,33 +38,47 @@ function playRound(btnId) {
   let result;
 
   if (pmove === 'rock') {
+    renderPlayerMove.innerHTML = '<img class="moveIMGVS" src="imagesGifs/rock.png">';
+
     if (cmove === 'rock') {
+      renderCPMove.innerHTML = '<img class="moveIMGVS" src="imagesGifs/rock.png">'
       result = 'No one wins, its a draw';
     } else if (cmove === 'scissors') {
+      renderCPMove.innerHTML = '<img class="moveIMGVS" src="imagesGifs/scissor.png">';
       result = 'u win';
     } else if (cmove === 'paper') {
+      renderCPMove.innerHTML = '<img class="moveIMGVS" src="imagesGifs/paper.png">';
       result = 'you lose';
     }
+
     return result;
   }
 
   if (pmove === 'scissors') {
+    renderPlayerMove.innerHTML = '<img class="moveIMGVS" src="imagesGifs/scissor.png">'
     if (cmove === 'rock') {
+      renderCPMove.innerHTML = '<img class="moveIMGVS" src="imagesGifs/rock.png">'
       result = 'you lose';
     } else if (cmove === 'scissors') {
+      renderCPMove.innerHTML = '<img class="moveIMGVS" src="imagesGifs/scissor.png">';
       result = 'No one wins, its a draw';
     } else if (cmove === 'paper') {
+      renderCPMove.innerHTML = '<img class="moveIMGVS" src="imagesGifs/paper.png">';
       result = 'u win';
     }
     return result;
   }
 
   if (pmove === 'paper') {
+    renderPlayerMove.innerHTML = '<img class="moveIMGVS" src="imagesGifs/paper.png">'
     if (cmove === 'rock') {
+      renderCPMove.innerHTML = '<img class="moveIMGVS" src="imagesGifs/rock.png">'
       result = 'u win';
     } else if (cmove === 'scissors') {
+      renderCPMove.innerHTML = '<img class="moveIMGVS" src="imagesGifs/scissor.png">';
       result = 'you lose'
     } else if (cmove === 'paper') {
+      renderCPMove.innerHTML = '<img class="moveIMGVS" src="imagesGifs/paper.png">';
       result = 'No one wins, its a draw';
     }
     return result;
@@ -51,40 +86,17 @@ function playRound(btnId) {
   
 }
 
-// variables
-let middleplayerVS = document.querySelector('.middle-playerVS');
 
-let pHPnodeList = document.querySelector(".playerHP").children;
-let cHPnodeList = document.querySelector(".opponentHP").children;
-
-let playerHpBoxes = Array.from(pHPnodeList);
-let opponentHpBoxes = Array.from(cHPnodeList);
-let playerHP = playerHpBoxes.length,opponentHP = -1;
-
-let moves = document.querySelectorAll('.move');
-let renderResult = document.querySelector('.results');
-let scoreBoard = document.querySelector('.scoreBoard');
-let playerScore = {
-  wins: 0,
-  losses: 0,
-  ties: 0
-}
 
 //later functions
-
-console.log(playerHP)
-console.log(opponentHP)
 
 function removeGreen() {
   playerHpBoxes[playerHP].classList.remove('green');
 }
-
 function removeCpGreen() {
   opponentHpBoxes[opponentHP].classList.remove('green');
 }
-function executeGame(btn) {
-  GAME(btn);
-}
+
 
 function GAME(btn) {
   let Id = btn.id;

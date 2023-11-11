@@ -16,21 +16,23 @@ img {
 .playerHP,
 .opponentHP {
   display: flex;
-  border: 1px solid red;
 }
 
 .top-hp-bars {
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5px;
+  padding: 50px;
 }
 
-.playerHP {
+.playerHP,
+.opponentHP {
   background-color: rgb(255, 255, 255);
+  border: rgb(43, 43, 43) solid 3px;
 }
 
 .playerHP div,
 .opponentHP div {
-  border: 1px solid blue;
-  margin: 0 2px;
   width: 70px;
   height: 70px;
   
@@ -62,7 +64,7 @@ img {
 
 /*bottom move container */
 
-.move-container button img{
+.moveIMG{
   width: 150px;
   height: 150px;
   max-width: 150px;
@@ -72,6 +74,14 @@ img {
   border: 5px solid red;
 }
 
+.moveIMGVS {
+  width: 150px;
+  height: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: contain;
+  object-position: center center;
+}
 
 .move-container button{
   margin: 0;
