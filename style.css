@@ -1,5 +1,5 @@
 body {
-  background-image:url('imagesGifs/dam2.gif');
+  /* background-image:url('imagesGifs/dam2.gif'); */
   background-size: cover; 
   background-repeat: no-repeat; 
   background-position: center center; 
@@ -8,8 +8,39 @@ body {
 }
 
 img {
-  height: 350px;
+  max-height: 350px;
 }
+/* top hp section */
+
+.top-hp-bars,
+.playerHP,
+.opponentHP {
+  display: flex;
+  border: 1px solid red;
+}
+
+.top-hp-bars {
+  justify-content: space-between;
+}
+
+.playerHP {
+  background-color: rgb(255, 255, 255);
+}
+
+.playerHP div,
+.opponentHP div {
+  border: 1px solid blue;
+  margin: 0 2px;
+  width: 70px;
+  height: 70px;
+  
+}
+
+.green {
+  background-color: rgb(66, 224, 66);
+  
+}
+/* mid section */
 
 .middle-playerVS,
 .playerBox,
@@ -27,4 +58,25 @@ img {
 .page-container {
   display: flex;
   flex-direction: column;
+}
+
+/*bottom move container */
+
+.move-container button img{
+  width: 150px;
+  height: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: contain;
+  object-position: center center;
+  border: 5px solid red;
+}
+
+
+.move-container button{
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  max-width: 200px;
+  
 }

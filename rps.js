@@ -1,3 +1,4 @@
+// core functions
 function getComputerChoice() {
   const getNumber = Math.floor((Math.random() * 100) + 1);
   
@@ -50,6 +51,16 @@ function playRound(btnId) {
   
 }
 
+// variables
+let middleplayerVS = document.querySelector('.middle-playerVS');
+
+let pHPnodeList = document.querySelector(".playerHP").children;
+let cHPnodeList = document.querySelector(".opponentHP").children;
+
+let playerHpBoxes = Array.from(pHPnodeList);
+let opponentHpBoxes = Array.from(cHPnodeList);
+let playerHP = playerHpBoxes.length,opponentHP = -1;
+
 let moves = document.querySelectorAll('.move');
 let renderResult = document.querySelector('.results');
 let scoreBoard = document.querySelector('.scoreBoard');
@@ -59,23 +70,51 @@ let playerScore = {
   ties: 0
 }
 
+//later functions
+
+console.log(playerHP)
+console.log(opponentHP)
+
+function removeGreen() {
+  playerHpBoxes[playerHP].classList.remove('green');
+}
+
+function removeCpGreen() {
+  opponentHpBoxes[opponentHP].classList.remove('green');
+}
+function executeGame(btn) {
+  GAME(btn);
+}
+
 function GAME(btn) {
   let Id = btn.id;
   let result = playRound(Id);
   renderResult.innerHTML = result;
   if (result === 'u win') {
     playerScore.wins++;
+    opponentHP++;
+    console.log(opponentHP)
+    removeCpGreen();
   } else if (result === 'you lose') {
     playerScore.losses++;
+    playerHP--;
+    console.log(playerHP)
+    removeGreen();
   } else {
     playerScore.ties++;
   }
   scoreBoard.innerHTML = `wins : ${playerScore.wins}, losses: ${playerScore.losses}, ties: ${playerScore.ties}`;
 
   if (playerScore.wins === 5) {
-    document.body.innerHTML = 'YOU WON THE BATTLE'
+    middleplayerVS.innerHTML = 'YOU WON THE BATTLE';
+    moves.forEach((btn) => {
+      btn.removeEventListener('click');
+    })
   } else if (playerScore.losses === 5) {
-    document.body.innerHTML = 'YOU LOST'
+    middleplayerVS.innerHTML = 'YOU LOST';
+    moves.forEach((btn) => {
+      btn.removeEventListener('click');
+    })
   } 
 }
 
@@ -83,8 +122,11 @@ moves.forEach((btn) => {
   btn.addEventListener('click', () => {
     GAME(btn);
   })
+});
 
-})
+
+
+
 
 
 
