@@ -1,3 +1,6 @@
 # odin-rockpaperscissor
 rock paper scissor project
-i honestly dont know what to put in a readme
+
+i tried to go with a pokemon theme cuz i like pokemon and implemented a HP bar with it 
+
+feel free to see how i did it but it was super scuffed LMAO 
