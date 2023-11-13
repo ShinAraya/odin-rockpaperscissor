@@ -123,13 +123,28 @@ function GAME(btn) {
   ties: ${playerScore.ties}`;
 
   if (playerScore.wins === 5) {
-    middleplayerVS.innerHTML = `<p style="text-align:center;">YOU WON THE BATTLE <br> <button class='resetButton' onclick="location.reload()">PLAY AGAIN</button> </p>
-    `;;
+    middleplayerVS.innerHTML = 
+    `<p style="text-align:center;">
+      <img style="height:200px" src="imagesGifs/pika3.gif">
+       YOU WON THE BATTLE 
+       <br> 
+      <button class='resetButton' onclick="location.reload()">
+       PLAY AGAIN
+      </button>
+     </p>
+    `;
     moves.forEach((btn) => {
       btn.removeEventListener('click');
     })
   } else if (playerScore.losses === 5) {
-    middleplayerVS.innerHTML = `<p style="text-align:center;">COMPUTER WON THE BATTLE <br> <button class='resetButton' onclick="location.reload()">PLAY AGAIN</button> </p>
+    middleplayerVS.innerHTML = `<p style="text-align:center;">
+    <img style="height:200px" src="imagesGifs/pika4.gif">
+      some TRAINER WON THE BATTLE 
+     <br> 
+    <button class='resetButton' onclick="location.reload()">
+     PLAY AGAIN
+    </button>
+   </p>
     `;
     moves.forEach((btn) => {
       btn.removeEventListener('click');

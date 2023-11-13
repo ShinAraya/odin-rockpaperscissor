@@ -9,14 +9,14 @@ html, body,.page-container {
 }
 
 body {
-  /* background-image:url('imagesGifs/dam2.gif'); */
+  background-image:url('imagesGifs/city.jpeg');
   background-size: cover; 
   background-repeat: no-repeat; 
   background-position: center center; 
   background-attachment: fixed;
 }
 
-img {
+.avatar {
   max-height: 180px;
   max-width: 100%;
 }
@@ -32,7 +32,7 @@ img {
 .top-hp-bars {
   justify-content: space-around;
   align-items: center;
-  padding: 0.5rem; 
+  padding: 50px 0.5rem ; 
   border-bottom: 1px solid black;
 }
 
@@ -116,6 +116,7 @@ img {
   justify-content: center;
   gap: 10px;
   border-top: 2px solid black;
+  background-color: lightblue;
 }
 
 .move-container button{
@@ -124,4 +125,84 @@ img {
   max-height: 150px;
   max-width: 150px;
   border: none;
+}
+
+@media screen and (min-width: 908px) {
+  body {
+    background-color: lightgreen;
+  }
+
+  .avatar {
+    max-height: 200px;
+  }
+
+  .top-hp-bars {
+    padding: 50px;
+  }
+
+  .playerHP div,
+  .opponentHP div {
+    height: 50px;
+    width: 50px;
+  }
+
+  .scoreSetter {
+    font-size: 1rem;
+  }
+
+  .battleToScore {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .middle-playerVS,
+  .playerBox,
+  .opponentBox {
+  gap: 10px;
+  }
+
+  .moveIMG,.moveIMGVS {
+   height: 120px;
+   width: 120px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .avatar {
+    max-height: 350px;
+  }
+
+  .top-hp-bars {
+    padding: 50px;
+  }
+
+  .playerHP div,
+  .opponentHP div {
+    height: 70px;
+    width: 70px;
+  }
+
+  .scoreSetter {
+    font-size: 1rem;
+  }
+
+  .battleToScore {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .middle-playerVS,
+  .playerBox,
+  .opponentBox {
+  gap: 10px;
+  }
+
+  .moveIMG,.moveIMGVS {
+   height: 150px;
+   width: 150px;
+  }
 }
