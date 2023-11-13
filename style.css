@@ -1,14 +1,24 @@
+/* * {
+  border: red solid 1px;
+} */
+
+/* stuff starts breaking at height:700px,width:1000px */
+
+html, body,.page-container {
+  height: 100%;
+}
+
 body {
   /* background-image:url('imagesGifs/dam2.gif'); */
   background-size: cover; 
   background-repeat: no-repeat; 
   background-position: center center; 
   background-attachment: fixed;
-  height: 100%;
 }
 
 img {
   max-height: 350px;
+  max-width: 100%;
 }
 /* top hp section */
 
@@ -16,13 +26,14 @@ img {
 .playerHP,
 .opponentHP {
   display: flex;
+  text-align: center;
 }
 
 .top-hp-bars {
   justify-content: space-around;
   align-items: center;
-  margin-top: 5px;
   padding: 50px;
+  border-bottom: 1px solid black;
 }
 
 .playerHP,
@@ -33,14 +44,17 @@ img {
 
 .playerHP div,
 .opponentHP div {
-  width: 70px;
   height: 70px;
-  
+  width: 70px;
 }
 
 .green {
   background-color: rgb(66, 224, 66);
-  
+}
+
+.scoreSetter {
+  width: 150px;
+  text-align: center;
 }
 /* mid section */
 
@@ -55,6 +69,17 @@ img {
 
 .middle-playerVS {
   flex: 1;
+}
+
+.battleToScore {
+  width: 150px;
+  text-align: center;
+}
+
+.resetButton {
+  border: none;
+  color: white;
+  background-color: darkblue;
 }
 
 .page-container {
@@ -83,10 +108,17 @@ img {
   object-position: center center;
 }
 
+.move-container {
+  display: flex; 
+  justify-content: center;
+  gap: 10px;
+  border-top: 2px solid black;
+}
+
 .move-container button{
-  margin: 0;
+  margin: 10px 0px;
   padding: 0;
-  max-height: 200px;
-  max-width: 200px;
-  
+  max-height: 150px;
+  max-width: 150px;
+  border: none;
 }

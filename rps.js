@@ -2,6 +2,7 @@
 let middleplayerVS = document.querySelector('.middle-playerVS');
 let renderPlayerMove = document.querySelector('.renderPlayerMove');
 let renderCPMove = document.querySelector('.renderCPMove');
+let battleToScore = document.querySelector('.battleToScore');
 
 let pHPnodeList = document.querySelector(".playerHP").children;
 let cHPnodeList = document.querySelector(".opponentHP").children;
@@ -90,6 +91,7 @@ function playRound(btnId) {
 
 //later functions
 
+
 function removeGreen() {
   playerHpBoxes[playerHP].classList.remove('green');
 }
@@ -101,7 +103,8 @@ function removeCpGreen() {
 function GAME(btn) {
   let Id = btn.id;
   let result = playRound(Id);
-  renderResult.innerHTML = result;
+  battleToScore.innerText = `${result}`
+  // renderResult.innerHTML = result;
   if (result === 'u win') {
     playerScore.wins++;
     opponentHP++;
@@ -115,15 +118,19 @@ function GAME(btn) {
   } else {
     playerScore.ties++;
   }
-  scoreBoard.innerHTML = `wins : ${playerScore.wins}, losses: ${playerScore.losses}, ties: ${playerScore.ties}`;
+  scoreBoard.innerHTML = `wins : ${playerScore.wins},<br>
+  losses: ${playerScore.losses},<br>
+  ties: ${playerScore.ties}`;
 
   if (playerScore.wins === 5) {
-    middleplayerVS.innerHTML = 'YOU WON THE BATTLE';
+    middleplayerVS.innerHTML = `<p style="text-align:center;">YOU WON THE BATTLE <br> <button class='resetButton' onclick="location.reload()">PLAY AGAIN</button> </p>
+    `;;
     moves.forEach((btn) => {
       btn.removeEventListener('click');
     })
   } else if (playerScore.losses === 5) {
-    middleplayerVS.innerHTML = 'YOU LOST';
+    middleplayerVS.innerHTML = `<p style="text-align:center;">COMPUTER WON THE BATTLE <br> <button class='resetButton' onclick="location.reload()">PLAY AGAIN</button> </p>
+    `;
     moves.forEach((btn) => {
       btn.removeEventListener('click');
     })
@@ -135,6 +142,7 @@ moves.forEach((btn) => {
     GAME(btn);
   })
 });
+
 
 
 
